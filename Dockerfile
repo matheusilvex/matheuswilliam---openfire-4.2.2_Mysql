@@ -1,11 +1,11 @@
 #name of container: docker-openfire
 #versison of container: 0.3.1
 FROM centos:7
-MAINTAINER Matheus William  "matheuswilliamsilva@icloud.com"
+MAINTAINER matheuswilliam  "matheuswilliamsilva@icloud.com"
 
 #add repository and update the container
 #Installation of nesesary package/software for this containers...
-RUN yum update && yum install -y -q openjdk-8-jre default-jre-headless \
+RUN yum update \
                     && yum -y install \
                     && yum -y vim \
                     && yum -y wget \
