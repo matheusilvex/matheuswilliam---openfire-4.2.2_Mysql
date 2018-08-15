@@ -5,7 +5,7 @@ MAINTAINER matheuswilliam  "matheuswilliamsilva@icloud.com"
 
 #add repository and update the container
 #Installation of nesesary package/software for this containers...
-RUN yum update \
+RUN yum update && yum install -y -q openjdk-8-jre default-jre-headless \
                     && yum -y install \
                     && yum -y vim \
                     && yum -y wget \
