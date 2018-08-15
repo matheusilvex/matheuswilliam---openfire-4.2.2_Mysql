@@ -2,7 +2,7 @@
 set -e
 
 #installing openfire
-    cd root
+    cd /root
     wget https://www.igniterealtime.org/downloadServlet?filename=openfire/openfire-4.2.2-1.x86_64.rpm
     yum -y install *.rpm
 

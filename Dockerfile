@@ -5,15 +5,12 @@ MAINTAINER matheuswilliam  "matheuswilliamsilva@icloud.com"
 
 #add repository and update the container
 #Installation of nesesary package/software for this containers...
-RUN yum update && yum install -y -q openjdk-8-jre default-jre-headless \
-                    && yum -y install \
+RUN yum update && yum install -y java-1.8.0-openjdk java-1.8.0-openjdk-devel \
                     && yum -y vim \
                     && yum -y wget \
                     && yum -y glibc \
-                    && yum clean \
                     && yum autoremove \
-                    && rm -rf /tmp/* /var/tmp/*  \
-                    && rm -rf /var/lib/apt/lists/*
+                    && rm -rf /tmp/* /var/tmp/*
 
 ##startup scripts  
 #Pre-config scrip that maybe need to be run one time only when the container run the first time .. using a flag to don't 
