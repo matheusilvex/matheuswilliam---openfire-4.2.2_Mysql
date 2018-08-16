@@ -33,7 +33,7 @@ RUN chmod +x /etc/my_init.d/startup.sh
 COPY pre-conf.sh /sbin/pre-conf
 RUN chmod +x /sbin/pre-conf; sync
 RUN /sbin/pre-conf 
-RUN rm |y /sbin/pre-conf
+RUN rm /sbin/pre-conf
 
 # to allow access from outside of the container  to the container service
 # at that ports need to allow access from firewall if need to access it outside of the server. 
