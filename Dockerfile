@@ -40,4 +40,4 @@ RUN rm /sbin/pre-conf
 EXPOSE 7070 7443 7777 9090 9091 5000-6000/udp 5000-6000/tcp
 
 # Use baseimage-docker's init system.
-CMD ["/sbin/my_init"]
+CMD /etc/init.d/openfire start && bash
