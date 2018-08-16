@@ -2,9 +2,9 @@
 set -e
 
 #installing openfire
-    cd /root
+     cd root
     wget https://www.igniterealtime.org/downloadServlet?filename=openfire/openfire-4.2.2-1.x86_64.rpm
-    yum -y install *.rpm
+    yum install -y *.rpm
 
 #installing sparkweb
 #wget http://www.igniterealtime.org/downloadServlet?filename=sparkweb/sparkweb_0_9_0.tar.gz
