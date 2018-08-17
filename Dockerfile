@@ -23,9 +23,9 @@ RUN chmod +x /etc/my_init.d/startup.sh
 ##Adding Deamons to containers
 # to add openfire deamon to runit
 
-#RUN mkdir /etc/init.d/openfire
-#COPY openfire.sh /etc/init.d/openfire/run
-#RUN chmod +x /etc/init.d/openfire/run 
+RUN mkdir /etc/init.d/openfire
+COPY openfire.sh /etc/init.d/openfire/run
+RUN chmod +x /etc/init.d/openfire/run 
 
 #pre-config scritp for different service that need to be run when container image is create 
 #maybe include additional software that need to be installed ... with some service running ... like example mysqld
@@ -40,4 +40,4 @@ RUN rm /sbin/pre-conf
 EXPOSE 7070 7443 7777 9090 9091 5000-6000/udp 5000-6000/tcp
 
 # Use baseimage-docker's init system.
-CMD /etc/init.d/openfire start && bash
+CMD ["/sbin/my_init"]
