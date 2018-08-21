@@ -5,6 +5,7 @@ set -e
      cd root
     wget https://www.igniterealtime.org/downloadServlet?filename=openfire/openfire-4.2.2-1.x86_64.rpm
     yum install -y *.rpm
+    chkconfig openfire on
 
 #installing sparkweb
 #wget http://www.igniterealtime.org/downloadServlet?filename=sparkweb/sparkweb_0_9_0.tar.gz
