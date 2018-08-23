@@ -3,8 +3,6 @@
 
 set -e
 
-/etc/init.d/openfire start
-
 if [ -f /etc/configured ]; then
         echo 'already configured'
 else
