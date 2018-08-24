@@ -15,9 +15,9 @@ RUN rm -rf /tmp/* /var/tmp/*
 ##startup scripts  
 #Pre-config scrip that maybe need to be run one time only when the container run the first time .. using a flag to don't 
 #run it again ... use for conf for service ... when run the first time ...
-RUN mkdir -p /etc/my_init.d
-COPY startup.sh /etc/my_init.d/startup.sh
-RUN chmod +x /etc/my_init.d/startup.sh
+#RUN mkdir -p /etc/my_init.d
+#COPY startup.sh /etc/my_init.d/startup.sh
+#RUN chmod +x /etc/my_init.d/startup.sh
 
 #pre-config scritp for different service that need to be run when container image is create 
 #maybe include additional software that need to be installed ... with some service running ... like example mysqld
@@ -37,7 +37,7 @@ RUN rm /sbin/pre-conf
 
 # to allow access from outside of the container  to the container service
 # at that ports need to allow access from firewall if need to access it outside of the server. 
-EXPOSE 7070 7443 7777 9090 9091 5000-6000/udp 5000-6000/tcp
+EXPOSE 9090:9090 5222:5222 5269:5269 5223:5223 7443:7443 7777:7777 7070:7070 5229:5229 5275:5275
 
 # Use baseimage-docker's init system.
-CMD ["/sbin/my_init"]
+CMD /etc/init.d/openfire start && bash
