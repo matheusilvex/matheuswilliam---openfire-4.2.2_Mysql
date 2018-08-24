@@ -53,6 +53,7 @@ note: -p 5000-6000:5000-6000/tcp -p 5000-6000:5000-6000/udp  this only needed if
 
 note: deploy this container behind proxy with SSL for extra security:
 
+
 https://github.com/jwilder/nginx-proxy
 
 https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion
