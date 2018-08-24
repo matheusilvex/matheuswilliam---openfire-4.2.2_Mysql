@@ -37,7 +37,7 @@ RUN rm /sbin/pre-conf
 
 # to allow access from outside of the container  to the container service
 # at that ports need to allow access from firewall if need to access it outside of the server. 
-EXPOSE 9090:9090 5222:5222 5269:5269 5223:5223 7443:7443 7777:7777 7070:7070 5229:5229 5275:5275
+EXPOSE 9090 9091 5000:6000/tcp 5000:6000/udp 5222 5269 5223 7443 7777 7070 5229 5275
 
 # Use baseimage-docker's init system.
 CMD /etc/init.d/openfire start && bash
